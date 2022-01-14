@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\Godot_proj\\Godot Proj.csproj": {}
+  },
+  "projects": {
+    "F:\\Godot_proj\\Godot Proj.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Godot_proj\\Godot Proj.csproj",
+        "projectName": "Godot Proj",
+        "projectPath": "F:\\Godot_proj\\Godot Proj.csproj",
+        "packagesPath": "C:\\Users\\TelAranRhiod\\.nuget\\packages\\",
+        "outputPath": "F:\\Godot_proj\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TelAranRhiod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
