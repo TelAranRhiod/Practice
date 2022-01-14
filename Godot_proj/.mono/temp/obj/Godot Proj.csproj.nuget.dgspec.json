@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Godot_proj\\Godot Proj.csproj": {}
+    "F:\\Godot_Practice_project\\Practice\\Godot_proj\\Godot Proj.csproj": {}
   },
   "projects": {
-    "F:\\Godot_proj\\Godot Proj.csproj": {
+    "F:\\Godot_Practice_project\\Practice\\Godot_proj\\Godot Proj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Godot_proj\\Godot Proj.csproj",
+        "projectUniqueName": "F:\\Godot_Practice_project\\Practice\\Godot_proj\\Godot Proj.csproj",
         "projectName": "Godot Proj",
-        "projectPath": "F:\\Godot_proj\\Godot Proj.csproj",
+        "projectPath": "F:\\Godot_Practice_project\\Practice\\Godot_proj\\Godot Proj.csproj",
         "packagesPath": "C:\\Users\\TelAranRhiod\\.nuget\\packages\\",
-        "outputPath": "F:\\Godot_proj\\.mono\\temp\\obj\\",
+        "outputPath": "F:\\Godot_Practice_project\\Practice\\Godot_proj\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TelAranRhiod\\AppData\\Roaming\\NuGet\\NuGet.Config"

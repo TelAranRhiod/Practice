@@ -9,3 +9,5 @@ position = Vector2( 24, 18 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="Basic_Interactive2D" parent="." instance=ExtResource( 2 )]
+
+[connection signal="body_entered" from="Basic_Interactive2D" to="Player" method="_on_Body_entered"]

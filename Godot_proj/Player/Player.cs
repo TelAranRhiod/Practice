@@ -17,6 +17,7 @@ public class Player : KinematicBody2D
         if (Input.GetActionStrength("sprint")!=0)
         {
             speed = moveSpeed + sprintBonus;
+            GD.Print("sprinting");
         }
         MoveAndCollide(motion.Normalized() * speed * delta);
     }
