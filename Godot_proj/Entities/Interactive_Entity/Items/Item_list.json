@@ -5,15 +5,41 @@
         "Item_Name":"Heal_Dummy",
         "Item_Heal":10,
         "Item_Damage":null,
-        "Item_holster":true,
-        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Heal_Dummy.png"
+        "Item_Holster":true,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Heal_Dummy.png",
+        "Item_debuff": null,
+        "Item_worth" : 10,
+        "Item_cost": 20,
     },
     "2":
     {
         "Item_Name":"Damage_Dummy",
+        "Item_Heal":10,
+        "Item_Damage":null,
+        "Item_Holster":true,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Damage_Dummy.png",
+        "Item_debuff": null,
+        "Item_worth" : 10,
+        "Item_cost": 20
+    },
+    "3":
+    {
+        "Item_Name":"Electronic_Bits",
         "Item_Heal":null,
-        "Item_Damage":10,
-        "Item_holster":true,
-        "Item_Directory":null
+        "Item_Damage":null,
+        "Item_Holster":true,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Electronic_Bits.png",
+        "Item_debuff": null,
+        "Item_worth" : 50,
+        "Item_cost": 70
+    },
+    "101":
+    {
+        "ManualPick_Name": "Inspect_Dummy",
+        "ManualPick_Holster": true,
+        "ManualPick_Description": "A simple pickable with discription",
+        "ManualPick_Directory": "",
+        "Item_worth": 10,
+        "Item_cost": 20
     }
 }

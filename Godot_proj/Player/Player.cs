@@ -22,6 +22,8 @@ public class Player : KinematicBody2D
         }
         MoveAndCollide(motion.Normalized() * speed * delta);
     }
+    
+    
 
     
 
@@ -29,8 +31,9 @@ public class Player : KinematicBody2D
     {
         GD.Print("Picked up "+ instance);
     }
-    public int getPlayerSpeed()
+
+    public void ManualPickup()
     {
-        return speed;
+        
     }
 }
