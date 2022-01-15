@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ItemHolder.PNG-f5aa0cdcff6e05ab80f556550fb799e7.stex"
+path="res://.import/revolver.png-eab7a03004a4d37e91267073bbe86cce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player_Profile/PlayerP_File/Player_Profile_pngs/ItemHolder.PNG"
-dest_files=[ "res://.import/ItemHolder.PNG-f5aa0cdcff6e05ab80f556550fb799e7.stex" ]
+source_file="res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/item_png/revolver.png"
+dest_files=[ "res://.import/revolver.png-eab7a03004a4d37e91267073bbe86cce.stex" ]
 
 [params]
 

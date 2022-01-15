@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackGround.PNG-f23bf5fadc021c9f650d9b91c0b8ae9e.stex"
+path="res://.import/ItemHolder.PNG.PNG-3902e84cbd94431704c719284637cee3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player_Profile/PlayerP_File/Player_Profile_pngs/BackGround.PNG"
-dest_files=[ "res://.import/BackGround.PNG-f23bf5fadc021c9f650d9b91c0b8ae9e.stex" ]
+source_file="res://Player/Player_Profile/PlayerP_File/Player_Profile_pngs/ItemHolder.PNG.PNG"
+dest_files=[ "res://.import/ItemHolder.PNG.PNG-3902e84cbd94431704c719284637cee3.stex" ]
 
 [params]
 

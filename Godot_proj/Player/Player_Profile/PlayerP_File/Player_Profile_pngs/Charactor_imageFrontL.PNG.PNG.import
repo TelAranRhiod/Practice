@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerFrame_idle_1.png-8c11c1a1638351ac154a0f6e0042ee85.stex"
+path="res://.import/Charactor_imageFrontL.PNG.PNG-802475f4ab44167decff125eabb11452.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/PlayerBodySprite/front_facing/left_aim/PlayerFrame_idle_1.png"
-dest_files=[ "res://.import/PlayerFrame_idle_1.png-8c11c1a1638351ac154a0f6e0042ee85.stex" ]
+source_file="res://Player/Player_Profile/PlayerP_File/Player_Profile_pngs/Charactor_imageFrontL.PNG.PNG"
+dest_files=[ "res://.import/Charactor_imageFrontL.PNG.PNG-802475f4ab44167decff125eabb11452.stex" ]
 
 [params]
 
