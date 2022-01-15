@@ -1,0 +1,19 @@
+{
+    "1" :
+    {
+
+        "Item_Name":"Heal_Dummy",
+        "Item_Heal":10,
+        "Item_Damage":null,
+        "Item_holster":true
+    },
+    "2":
+    {
+        "Item_Name":"Damage_Dummy",
+        "Item_Heal":null,
+        "Item_Damage":10,
+        "Item_holster":true
+    }
+
+
+}

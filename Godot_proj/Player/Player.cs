@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections;
 
 public class Player : KinematicBody2D
 {
@@ -22,11 +23,12 @@ public class Player : KinematicBody2D
         MoveAndCollide(motion.Normalized() * speed * delta);
     }
 
-    public void _on_Body_entered(Node body)
-    {
-        GD.Print("calling signal enter a interactive object");
-    }
+    
 
+    public void pickup(Area2D instance)
+    {
+        GD.Print("Picked up "+ instance);
+    }
     public int getPlayerSpeed()
     {
         return speed;
