@@ -9,7 +9,7 @@
 position = Vector2( 24, 18 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 453, 325 )
+position = Vector2( 489, 282 )
 
 [node name="InstantPickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 220, 364 )
