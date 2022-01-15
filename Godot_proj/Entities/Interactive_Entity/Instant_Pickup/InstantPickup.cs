@@ -8,24 +8,24 @@ public class InstantPickup : Area2D
     // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
-    [Export] public int magnet_speed_scaler = 10;
-    [Export] public Boolean can_magnet = true;
+    [Export] public int magnet_speed_scaler = 20;
+    
+    private Boolean getMagnet = false;
+    private string target = "";
     public override void _PhysicsProcess(float delta)
     {
-        var getMagnet = false;
-        if (getMagnet = false)
+        
+        if (!getMagnet)
         {
+            var AreaArray = GetOverlappingAreas();
+                 foreach (var body in AreaArray)
+                 {
+                     if (((Area2D) body).Name == "PlayerMagnetArea"){getMagnet = true;target = ((Area2D) body).GetParent().Name;}
+                     else{return;}
+                 }
             //other physical process
-        }
-
-        var AreaArray = GetOverlappingAreas();
-        foreach (var body in AreaArray)
-        {
-            if (((Area2D) body).Name == "PlayerMagnetArea"&&can_magnet)
-            {
-                getMagnet = true;
-                Position += (((Node2D) GetParent().GetNode("Player")).Position - Position)/magnet_speed_scaler;
-            }
+        }else {
+            Position += (((Node2D) GetParent().GetNode(target)).Position - Position)/magnet_speed_scaler;
         }
     }
 

@@ -21,9 +21,20 @@ public class Player : KinematicBody2D
             GD.Print("sprinting");
         }
         MoveAndCollide(motion.Normalized() * speed * delta);
+        
+        
     }
+
     
-    
+    [Signal]
+    public delegate Boolean Interact(Node node);
+    public override void _Process(float delta)
+    {
+        if (Input.GetActionStrength("interact")!=0)
+        {
+            EmitSignal(nameof(Interact),this);
+        }
+    }
 
     
 
@@ -31,9 +42,5 @@ public class Player : KinematicBody2D
     {
         GD.Print("Picked up "+ instance);
     }
-
-    public void ManualPickup()
-    {
-        
-    }
+    
 }
