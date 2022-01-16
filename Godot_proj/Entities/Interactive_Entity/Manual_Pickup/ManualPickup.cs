@@ -26,6 +26,14 @@ public class ManualPickup : Area2D
             {
                 target = node.Name;
                 getMagnet = true;
+                foreach (Node bod in GetOverlappingBodies())
+                {
+                    if (target == bod.Name )
+                    {
+                        ((Player) node).pickup(this);
+                    }
+                }
+                
             }
         }
         
