@@ -1,0 +1,870 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/BackGround.PNG.PNG" type="Texture" id=1]
+[ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/ItemHolder.PNG.PNG" type="Texture" id=2]
+[ext_resource path="res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn" type="PackedScene" id=3]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory_Panel" type="Panel" parent="."]
+margin_left = 221.0
+margin_top = 123.0
+margin_right = 795.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Label" type="Label" parent="Inventory_Panel"]
+margin_left = 21.0
+margin_top = 12.0
+margin_right = 82.0
+margin_bottom = 43.0
+text = "Inventory
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventorySlots" type="GridContainer" parent="Inventory_Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 30.0
+margin_right = -164.0
+margin_bottom = -11.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 8
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSlots" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item" parent="Inventory_Panel/InventorySlots/ItemSlots" instance=ExtResource( 3 )]
+position = Vector2( 30, 30 )
+scale = Vector2( 1.4, 1.4 )
+
+[node name="ItemSlots2" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 68.0
+margin_right = 128.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots3" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 136.0
+margin_right = 196.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots4" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 204.0
+margin_right = 264.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots4"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots5" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 272.0
+margin_right = 332.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots5"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots6" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 340.0
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots6"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots7" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_top = 65.0
+margin_right = 60.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots7"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots8" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 68.0
+margin_top = 65.0
+margin_right = 128.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots8"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots9" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 136.0
+margin_top = 65.0
+margin_right = 196.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots9"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots10" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 204.0
+margin_top = 65.0
+margin_right = 264.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots10"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots11" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 272.0
+margin_top = 65.0
+margin_right = 332.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots11"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots12" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 340.0
+margin_top = 65.0
+margin_right = 400.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots12"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots13" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_top = 130.0
+margin_right = 60.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots13"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots14" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 68.0
+margin_top = 130.0
+margin_right = 128.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots14"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots15" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 136.0
+margin_top = 130.0
+margin_right = 196.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots15"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots16" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 204.0
+margin_top = 130.0
+margin_right = 264.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots16"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots17" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 272.0
+margin_top = 130.0
+margin_right = 332.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots17"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots18" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 340.0
+margin_top = 130.0
+margin_right = 400.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots18"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots19" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_top = 195.0
+margin_right = 60.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots19"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots20" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 68.0
+margin_top = 195.0
+margin_right = 128.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots20"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots21" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 136.0
+margin_top = 195.0
+margin_right = 196.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots21"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots22" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 204.0
+margin_top = 195.0
+margin_right = 264.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots22"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots23" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 272.0
+margin_top = 195.0
+margin_right = 332.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots23"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots24" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 340.0
+margin_top = 195.0
+margin_right = 400.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots24"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots25" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_top = 260.0
+margin_right = 60.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots25"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots26" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 68.0
+margin_top = 260.0
+margin_right = 128.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots26"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots27" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 136.0
+margin_top = 260.0
+margin_right = 196.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots27"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots28" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 204.0
+margin_top = 260.0
+margin_right = 264.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots28"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots29" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 272.0
+margin_top = 260.0
+margin_right = 332.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots29"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots30" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+margin_left = 340.0
+margin_top = 260.0
+margin_right = 400.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots30"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="EquipmentSlots" type="GridContainer" parent="Inventory_Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_top = 30.0
+margin_right = -37.0
+margin_bottom = 348.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSlots" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots2" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+margin_top = 64.0
+margin_right = 60.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots3" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+margin_top = 128.0
+margin_right = 60.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots4" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+margin_top = 192.0
+margin_right = 60.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots4"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots5" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+margin_top = 256.0
+margin_right = 60.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots5"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Holster_Panel" type="Panel" parent="."]
+margin_left = 224.0
+margin_top = 515.0
+margin_right = 795.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -2.0
+texture = ExtResource( 1 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Holster_Panel"]
+margin_left = 21.0
+margin_top = 4.0
+margin_right = 82.0
+margin_bottom = 52.0
+text = "Holster
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Holster_Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -268.0
+margin_top = -25.0
+margin_right = 268.0
+margin_bottom = 30.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 8
+columns = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSlots" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots2" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 68.0
+margin_right = 128.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots3" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 136.0
+margin_right = 196.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots4" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 204.0
+margin_right = 264.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots4"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots5" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 272.0
+margin_right = 332.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots5"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots6" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 340.0
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots6"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots7" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 408.0
+margin_right = 468.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots7"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ItemSlots8" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+margin_left = 476.0
+margin_right = 536.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots8"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 53.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5

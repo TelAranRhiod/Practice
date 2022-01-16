@@ -9,9 +9,10 @@ public class Item : Node2D
     // private string b = "text";
     [Export]
     public string ID = "1";
-    public String Item_Name;
-    public String Image_Directory ;
-    // Called when the node enters the scene tree for the first time.
+    private String Item_Name;
+    private String Image_Directory ;
+
+    
     public override void _Ready()
     {
         Godot.File files = new Godot.File();
@@ -33,6 +34,17 @@ public class Item : Node2D
             TextureRect texture = child as TextureRect;
             texture.Texture = GD.Load(Image_Directory) as Texture;
         }
+    }
+
+    public String getID()
+    {
+        return ID;
+    }
+
+    public void setID(String id)
+    {
+        ID = id;
+        this._Ready();
     }
 
     

@@ -35,22 +35,28 @@ public class Player : KinematicBody2D
 
     private Timer t = new Timer();
     private Boolean t_started = false;
+
     public override void _Ready()
     {
         moveSpeed = Speed_Set;
         sprintBonus = Sprint_Set;
         t.SetWaitTime(interact_waittime);
         t.SetOneShot(true);
-        this.AddChild(t);
+        if (t.GetParent()==null)
+        {
+            this.AddChild(t);
+        }
     }
 
     public override void _Process(float delta)
     {
+        
         if (Input.IsActionJustPressed("interact"))
         {
             GD.Print("pressed");
             t.Start();
             t_started = true;
+           // ((Game) this.GetParent()).spawnItem("1",this.Position);
         }
 
         if (t_started && t.GetTimeLeft() <= 0.9)
@@ -58,7 +64,7 @@ public class Player : KinematicBody2D
             var areas = ((Area2D) GetNode("PlayerMagnetArea")).GetOverlappingAreas();
             foreach (var area in areas)
             {
-                if(area is InterActOnly){moveSpeed = 0; sprintBonus = 0; break;}
+                if(area is InterActOnly){this.player_Stop(); break;}
             }
         }
         if (t.IsStopped()&&t_started)
@@ -69,8 +75,7 @@ public class Player : KinematicBody2D
         }
         if (Input.IsActionJustReleased("interact"))
         {
-            moveSpeed = Speed_Set;
-            sprintBonus = Sprint_Set;
+            this.player_Recover();
             if (t_started)
             {
                 t_started = false;
@@ -82,12 +87,26 @@ public class Player : KinematicBody2D
         }
     }
 
-    
+    public void player_Stop()
+    {
+        this.Speed_Set = 0; 
+        this.Sprint_Set = 0;
+        this._Ready();
+    }
 
-    public void pickup(Area2D instance)
+    public void player_Recover()
+    {
+        this.Speed_Set = 250; 
+        this.Sprint_Set = 200;
+        this._Ready();
+    }
+    [Signal] public delegate void Pick_Item(String ID);
+    public void pickup(Area2D instance,String ID)
     {
         instance.QueueFree();
-        GD.Print("Picked up "+ instance);
+        EmitSignal(nameof(Pick_Item),ID);
+        
+        GD.Print("Picked up "+ instance + ID);
     }
     
 }

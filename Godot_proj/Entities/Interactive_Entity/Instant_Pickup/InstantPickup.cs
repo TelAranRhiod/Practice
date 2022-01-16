@@ -14,6 +14,11 @@ public class InstantPickup : Area2D
     private Boolean getMagnet = false;
     private string target = "";
     private  Vector2 vec = new Vector2();
+
+    public void setInitialDirection(Vector2 direction)
+    {
+        vec = direction;
+    }
     public override void _PhysicsProcess(float delta)
     {
         
@@ -41,9 +46,16 @@ public class InstantPickup : Area2D
 
     public void _on_InstantPickup_body_entered(Node body)
     {
-        ((Player)body).pickup(this);
+        ((Player)body).pickup(this, ((Item)GetNode("Item")).getID());
     }
     
+    public void setItem(String id)
+    {
+        Item item = new Item();
+        item.setID(id);
+        this.AddChild(item);
+        item._Ready();
+    }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {
