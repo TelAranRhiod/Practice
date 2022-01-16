@@ -1,45 +1,78 @@
 {
     "1" :
     {
-
         "Item_Name":"Heal_Dummy",
         "Item_Heal":10,
+        "Item_Capacity":null,
         "Item_Damage":null,
         "Item_Holster":true,
-        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Heal_Dummy.png",
-        "Item_debuff": null,
-        "Item_worth" : 10,
-        "Item_cost": 20,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Gear.png",
+        "Item_debuff":null,
+        "Item_worth" :0,
+        "Item_cost":0
+
     },
     "2":
     {
         "Item_Name":"Damage_Dummy",
-        "Item_Heal":10,
-        "Item_Damage":null,
+        "Item_Heal":null,
+        "Item_Capacity": null,
+        "Item_Damage":10,
         "Item_Holster":true,
-        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Damage_Dummy.png",
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Gear.png",
         "Item_debuff": null,
-        "Item_worth" : 10,
-        "Item_cost": 20
+        "Item_worth" :0 ,
+        "Item_cost":0
+
     },
     "3":
     {
-        "Item_Name":"Electronic_Bits",
+        "Item_Name":"Electronic_Component",
         "Item_Heal":null,
+        "Item_Capacity":1,
         "Item_Damage":null,
-        "Item_Holster":true,
-        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Electronic_Bits.png",
+        "Item_Holster":null,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Electronic_Component.png",
         "Item_debuff": null,
         "Item_worth" : 50,
-        "Item_cost": 70
+        "Item_cost":70
+
+    },
+    "4":
+    {
+        "Item_Name":"Gear",
+        "Item_Heal":null,
+        "Item_Capacity":1,
+        "Item_Damage":null,
+        "Item_Holster":null,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Gear.png",
+        "Item_debuff": null,
+        "Item_worth" : 20,
+        "Item_cost":40
+    },
+    "100":
+    {
+        "Item_Name":"Equip_Dummy",
+        "Item_Heal":null,
+        "Item_Capacity": null,
+        "Item_Damage":null,
+        "Item_Holster":null,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Health_Kit.png",
+        "Item_debuff": null,
+        "Item_worth" : 0,
+        "Item_cost":0
     },
     "101":
     {
-        "ManualPick_Name": "Inspect_Dummy",
-        "ManualPick_Holster": true,
-        "ManualPick_Description": "A simple pickable with discription",
-        "ManualPick_Directory": "",
-        "Item_worth": 10,
-        "Item_cost": 20
-    }
+        "Item_Name":"Health_Kit",
+        "Item_Heal":25,
+        "Item_Capacity": 10,
+        "Item_Damage":null,
+        "Item_Holster":true,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Health_Kit.png",
+        "Item_debuff": null,
+        "Item_worth" : 20,
+        "Item_cost": 50
+    },
+
 }
