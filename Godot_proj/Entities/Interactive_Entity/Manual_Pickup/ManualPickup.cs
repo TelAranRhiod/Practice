@@ -20,6 +20,10 @@ public class ManualPickup : Area2D
         }
         
     }
+    public override void _Ready()
+    {
+        GetParent().GetNode("Player").Connect("Interact", this, nameof(_on_Player_Interact));
+    }
     public void _on_Player_Interact(Node node)
     {
         var AreaArray = GetOverlappingAreas();

@@ -17,7 +17,10 @@ public class InterActOnly : Area2D
         }
     }
     
-    
+    public override void _Ready()
+    {
+        GetParent().GetNode("Player").Connect("Interact_hold", this, nameof(_on_Player_Interact_hold));
+    }
     public void _on_Player_Interact_hold(Node node)
     {
         var AreaArray = GetOverlappingAreas();
