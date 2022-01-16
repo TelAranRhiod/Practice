@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Threading;
 
 public class ManualPickup : Area2D
 {
@@ -16,6 +18,7 @@ public class ManualPickup : Area2D
         {
             Position += (((Node2D) GetParent().GetNode(target)).Position - Position) / magnet_speed_scaler;
         }
+        
     }
     public void _on_Player_Interact(Node node)
     {
@@ -26,6 +29,8 @@ public class ManualPickup : Area2D
             {
                 target = node.Name;
                 getMagnet = true;
+                
+                
                 foreach (Node bod in GetOverlappingBodies())
                 {
                     if (target == bod.Name )

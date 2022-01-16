@@ -9,7 +9,7 @@ public class InstantPickup : Area2D
 
     // Called when the node enters the scene tree for the first time.
     [Export] public int magnet_speed_scaler = 20;
-    [Export] public float magnet_threshold = 50f;
+    [Export] public float magnet_threshold = 80f;
     [Export] public float initial_speed = 0;
     private Boolean getMagnet = false;
     private string target = "";

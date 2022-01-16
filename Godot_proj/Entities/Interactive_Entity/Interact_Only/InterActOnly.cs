@@ -18,13 +18,14 @@ public class InterActOnly : Area2D
     }
     
     
-    public void _on_Player_Interact(Node node)
+    public void _on_Player_Interact_hold(Node node)
     {
         var AreaArray = GetOverlappingAreas();
         foreach (var body in AreaArray)
         {
             if (((Area2D) body).GetParent() == node)
             {
+                GD.Print("interact");
                 this.Act();
             }
         }
