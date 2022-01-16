@@ -30,54 +30,5 @@ position = Vector2( 420, 318 )
 [node name="Item" parent="ManualPickup" instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
 
-[node name="ManualPickup2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup2" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup3" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup4" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup5" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup6" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup7" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
-[node name="ManualPickup8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
-
-[node name="Item" parent="ManualPickup8" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-
 [connection signal="body_entered" from="InstantPickup" to="InstantPickup" method="_on_InstantPickup_body_entered"]
 [connection signal="body_entered" from="ManualPickup" to="ManualPickup" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup2" to="ManualPickup2" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup3" to="ManualPickup3" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup4" to="ManualPickup4" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup5" to="ManualPickup5" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup6" to="ManualPickup6" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup7" to="ManualPickup7" method="_on_ManualPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup8" to="ManualPickup8" method="_on_ManualPickup_body_entered"]
