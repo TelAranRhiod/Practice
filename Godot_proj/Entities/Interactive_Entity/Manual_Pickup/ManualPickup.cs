@@ -17,7 +17,7 @@ public class ManualPickup : Area2D
             Position += (((Node2D) GetParent().GetNode(target)).Position - Position) / magnet_speed_scaler;
         }
     }
-    public Boolean _on_Player_Interact(Node node)
+    public void _on_Player_Interact(Node node)
     {
         var AreaArray = GetOverlappingAreas();
         foreach (var body in AreaArray)
@@ -28,7 +28,7 @@ public class ManualPickup : Area2D
                 getMagnet = true;
             }
         }
-        return true;
+        
     }
     public void _on_ManualPickup_body_entered(Node body)
     {

@@ -27,10 +27,10 @@ public class Player : KinematicBody2D
 
     
     [Signal]
-    public delegate Boolean Interact(Node node);
+    public delegate void Interact(Node node);
     public override void _Process(float delta)
     {
-        if (Input.GetActionStrength("interact")!=0)
+        if (Input.IsActionJustPressed("interact"))
         {
             EmitSignal(nameof(Interact),this);
         }
@@ -40,6 +40,7 @@ public class Player : KinematicBody2D
 
     public void pickup(Area2D instance)
     {
+        instance.QueueFree();
         GD.Print("Picked up "+ instance);
     }
     
