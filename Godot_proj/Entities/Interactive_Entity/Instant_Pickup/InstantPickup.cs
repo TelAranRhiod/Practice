@@ -51,7 +51,8 @@ public class InstantPickup : Area2D
 
     public void _on_InstantPickup_body_entered(Node body)
     {
-        ((Player)body).pickup(this, ((Item)GetNode("Item")).getID());
+        String id = ((Item) GetNode("Item")).getID();
+        ((Player)body).pickup(this,id);
     }
     
     public void setItem(String id)

@@ -1,5 +1,5 @@
 using Godot;
-
+using System;
 public class EquipSlot : PanelContainer
 {
     // Declare member variables here. Examples:
@@ -13,6 +13,16 @@ public class EquipSlot : PanelContainer
         {
             GD.Print(Name);
         }
+    }
+    public void addItem(String id)
+    {
+        var Itemsourse =(PackedScene) ResourceLoader.Load(
+            "res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn") ;
+        Item item = Itemsourse.Instance() as Item;
+        item.setID(id);
+        AddChild(item);
+        Vector2 adjust_position = new Vector2(43,44);
+        item.Position += adjust_position;
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

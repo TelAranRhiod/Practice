@@ -19,7 +19,7 @@ position = Vector2( 1, 0 )
 ID = "100"
 
 [node name="InstantPickup" parent="." instance=ExtResource( 2 )]
-position = Vector2( 338, 287 )
+position = Vector2( 423, 381 )
 
 [node name="Item" parent="InstantPickup" instance=ExtResource( 3 )]
 position = Vector2( -11, -9 )

@@ -15,7 +15,10 @@ public class HolsterSlots : GridContainer
             slot.Connect("gui_input",slot,"_on_gui_input");
         }
     }
-
+    public Boolean is_Occupied()
+    {
+        return ( this.GetNodeOrNull("Item")!= null);
+    }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {

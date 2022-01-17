@@ -103,7 +103,6 @@ public class Player : KinematicBody2D
     {
         instance.QueueFree();
         EmitSignal(nameof(Pick_Item),ID);
-        
         GD.Print("Picked up "+ instance + ID);
     }
     

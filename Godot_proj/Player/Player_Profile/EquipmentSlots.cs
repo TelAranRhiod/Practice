@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public class EquipmentSlots : GridContainer
@@ -13,6 +14,11 @@ public class EquipmentSlots : GridContainer
         {
             slot.Connect("gui_input",slot,"_on_gui_input");
         }
+    }
+
+    public Boolean is_Occupied()
+    {
+        return ( this.GetNodeOrNull("Item")!= null);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
