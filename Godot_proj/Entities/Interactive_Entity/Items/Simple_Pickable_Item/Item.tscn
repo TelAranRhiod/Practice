@@ -5,7 +5,6 @@
 [ext_resource path="res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item_Texture.cs" type="Script" id=3]
 
 [node name="Item" type="Node2D"]
-position = Vector2( -13, -14 )
 rotation = -0.261799
 script = ExtResource( 1 )
 
@@ -15,6 +14,8 @@ margin_top = -18.3712
 margin_right = 19.3934
 margin_bottom = 11.6288
 rect_rotation = 14.544
+mouse_filter = 2
+input_pass_on_modal_close_click = false
 texture = ExtResource( 2 )
 expand = true
 script = ExtResource( 3 )

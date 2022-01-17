@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/BackGround.PNG.PNG" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/ItemHolder.PNG.PNG" type="Texture" id=2]
 [ext_resource path="res://Player/Player_Profile/ItemSlot.cs" type="Script" id=3]
-[ext_resource path="res://Player/Player_Profile/InventorySlots.cs" type="Script" id=4]
-[ext_resource path="res://Player/Player_Profile/EquipmentSlots.cs" type="Script" id=5]
 [ext_resource path="res://Player/Player_Profile/EquipSlot.cs" type="Script" id=6]
-[ext_resource path="res://Player/Player_Profile/HolsterSlot.cs" type="Script" id=7]
-[ext_resource path="res://Player/Player_Profile/HolsterSlots.cs" type="Script" id=8]
 [ext_resource path="res://Player/Player_Profile/Inventory.cs" type="Script" id=9]
 
 [node name="Inventory" type="Control"]
@@ -58,7 +54,6 @@ margin_bottom = -11.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 8
 columns = 6
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -629,7 +624,6 @@ margin_left = -100.0
 margin_top = 30.0
 margin_right = -37.0
 margin_bottom = 348.0
-script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -770,18 +764,17 @@ margin_bottom = 30.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 8
 columns = 9
-script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HolsterSlot1" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots1" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_right = 60.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots1"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -792,14 +785,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot2" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots2" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 68.0
 margin_right = 128.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots2"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -810,14 +803,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot3" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots3" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 136.0
 margin_right = 196.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots3"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -828,14 +821,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot4" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots4" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 204.0
 margin_right = 264.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot4"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots4"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -846,14 +839,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot5" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots5" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 272.0
 margin_right = 332.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot5"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots5"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -864,14 +857,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot6" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots6" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 340.0
 margin_right = 400.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot6"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots6"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -882,14 +875,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot7" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots7" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 408.0
 margin_right = 468.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot7"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots7"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -900,14 +893,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="HolsterSlot8" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
+[node name="HolsterSlots8" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 476.0
 margin_right = 536.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot8"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlots8"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0

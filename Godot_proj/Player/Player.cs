@@ -98,12 +98,12 @@ public class Player : KinematicBody2D
         Sprint_Set = 200;
         _Ready();
     }
-    [Signal] public delegate void Pick_Item(String ID);
-    public void pickup(Area2D instance,String ID)
+    [Signal] public delegate void Pick_Item(Item i);
+    public void pickup(Area2D instance,Item i)
     {
+        EmitSignal(nameof(Pick_Item),i);
         instance.QueueFree();
-        EmitSignal(nameof(Pick_Item),ID);
-        GD.Print("Picked up "+ instance + ID);
+        GD.Print("Picked up "+ instance + i);
     }
     
 }

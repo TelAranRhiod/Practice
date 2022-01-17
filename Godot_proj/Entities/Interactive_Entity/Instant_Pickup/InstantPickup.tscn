@@ -6,9 +6,7 @@
 extents = Vector2( 8, 7.5 )
 
 [node name="InstantPickup" type="Area2D"]
-position = Vector2( 32, 32 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -14, -10.5 )
 shape = SubResource( 1 )

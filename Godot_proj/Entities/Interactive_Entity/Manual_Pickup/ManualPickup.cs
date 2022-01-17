@@ -38,7 +38,7 @@ public class ManualPickup : Area2D
                 {
                     if (target == bod.Name )
                     {
-                        ((Player) node).pickup(this,((Item)GetNode("Item")).getID());
+                        ((Player) node).pickup(this,((Item)GetNode("Item")));
                     }
                 }
                 
@@ -50,7 +50,7 @@ public class ManualPickup : Area2D
     {
         if (getMagnet)
         {
-            ((Player)body).pickup(this, ((Item)GetNode("Item")).getID());
+            ((Player)body).pickup(this, ((Item)GetNode("Item")));
         }
     }
 
