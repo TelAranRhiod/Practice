@@ -1,7 +1,5 @@
-using Godot;
 using System;
-using System.Collections;
-using System.Threading;
+using Godot;
 
 public class ManualPickup : Area2D
 {
@@ -10,7 +8,7 @@ public class ManualPickup : Area2D
     // private string b = "text";
     [Export] public int magnet_speed_scaler = 20;
     
-    private Boolean getMagnet = false;
+    private Boolean getMagnet;
     private string target = "";
     public override void _PhysicsProcess(float delta)
     {
@@ -23,6 +21,7 @@ public class ManualPickup : Area2D
     public override void _Ready()
     {
         GetParent().GetNode("Player").Connect("Interact", this, nameof(_on_Player_Interact));
+        Connect("body_entered", this, nameof(_on_ManualPickup_body_entered));
     }
     public void _on_Player_Interact(Node node)
     {

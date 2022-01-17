@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public class Game : Node2D
 {
@@ -16,21 +16,22 @@ public class Game : Node2D
     public void spawnItem(String ID, Vector2 position)
     {
         var InstantPicksourse =(PackedScene) ResourceLoader.Load(
-            "res://Entities/Interactive_Entity/Instant_Pickup/InstantPickup.tscn") ;
-        InstantPickup instantPickup = InstantPicksourse.Instance() as InstantPickup;
+            "res://Entities/Interactive_Entity/Manual_Pickup/ManualPickup.tscn") ;
+        ManualPickup instantPickup = InstantPicksourse.Instance() as ManualPickup;
+        this.AddChild(instantPickup);
         var Itemsourse =(PackedScene) ResourceLoader.Load(
             "res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn") ;
         Item item = Itemsourse.Instance() as Item;
         item.setID(ID);
         instantPickup.AddChild(item);
-        this.AddChild(instantPickup);
+        
         instantPickup.Position = position;
         //instantPickup.Position = position as Pos;
     }
 
     public Vector2 getPlayerPosition()
     {
-       return (this.GetNode("Player") as Player).Position;
+       return (GetNode("Player") as Player).Position;
     }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)

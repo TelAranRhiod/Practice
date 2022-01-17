@@ -1,6 +1,5 @@
-using Godot;
 using System;
-using System.Runtime.CompilerServices;
+using Godot;
 
 public class InterActOnly : Area2D
 {
@@ -29,7 +28,7 @@ public class InterActOnly : Area2D
             if (((Area2D) body).GetParent() == node)
             {
                 GD.Print("interact");
-                this.Act();
+                Act();
             }
         }
     }

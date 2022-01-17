@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public class InstantPickup : Area2D
 {
@@ -10,10 +10,10 @@ public class InstantPickup : Area2D
     // Called when the node enters the scene tree for the first time.
     [Export] public int magnet_speed_scaler = 20;
     [Export] public float magnet_threshold = 80f;
-    [Export] public float initial_speed = 0;
-    private Boolean getMagnet = false;
+    [Export] public float initial_speed;
+    private Boolean getMagnet;
     private string target = "";
-    private  Vector2 vec = new Vector2();
+    private  Vector2 vec;
 
     public void setInitialDirection(Vector2 direction)
     {
@@ -44,6 +44,11 @@ public class InstantPickup : Area2D
         }
     }
 
+    public override void _Ready()
+    {
+        Connect("body_entered",this,nameof(_on_InstantPickup_body_entered));
+    }
+
     public void _on_InstantPickup_body_entered(Node body)
     {
         ((Player)body).pickup(this, ((Item)GetNode("Item")).getID());
@@ -53,7 +58,7 @@ public class InstantPickup : Area2D
     {
         Item item = new Item();
         item.setID(id);
-        this.AddChild(item);
+        AddChild(item);
         item._Ready();
     }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

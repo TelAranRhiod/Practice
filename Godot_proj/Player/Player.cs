@@ -1,15 +1,13 @@
-using Godot;
 using System;
-using System.Collections;
-using System.Drawing.Printing;
+using Godot;
 
 public class Player : KinematicBody2D
 {
     [Export] public int Speed_Set = 250;
     [Export] public int Sprint_Set = 200;
-    private  int moveSpeed = 0;
-    private int sprintBonus = 0;
-    [Export] public int speed = 0;
+    private  int moveSpeed;
+    private int sprintBonus;
+    [Export] public int speed;
     [Export] public float interact_waittime = 1;
 
     
@@ -34,7 +32,7 @@ public class Player : KinematicBody2D
     [Signal] public delegate void Interact_hold(Node node);
 
     private Timer t = new Timer();
-    private Boolean t_started = false;
+    private Boolean t_started;
 
     public override void _Ready()
     {
@@ -44,7 +42,7 @@ public class Player : KinematicBody2D
         t.SetOneShot(true);
         if (t.GetParent()==null)
         {
-            this.AddChild(t);
+            AddChild(t);
         }
     }
 
@@ -56,7 +54,7 @@ public class Player : KinematicBody2D
             GD.Print("pressed");
             t.Start();
             t_started = true;
-           // ((Game) this.GetParent()).spawnItem("1",this.Position);
+            //((Game) GetParent()).spawnItem("1",Position);
         }
 
         if (t_started && t.GetTimeLeft() <= 0.9)
@@ -64,7 +62,7 @@ public class Player : KinematicBody2D
             var areas = ((Area2D) GetNode("PlayerMagnetArea")).GetOverlappingAreas();
             foreach (var area in areas)
             {
-                if(area is InterActOnly){this.player_Stop(); break;}
+                if(area is InterActOnly){player_Stop(); break;}
             }
         }
         if (t.IsStopped()&&t_started)
@@ -75,7 +73,7 @@ public class Player : KinematicBody2D
         }
         if (Input.IsActionJustReleased("interact"))
         {
-            this.player_Recover();
+            player_Recover();
             if (t_started)
             {
                 t_started = false;
@@ -89,16 +87,16 @@ public class Player : KinematicBody2D
 
     public void player_Stop()
     {
-        this.Speed_Set = 0; 
-        this.Sprint_Set = 0;
-        this._Ready();
+        Speed_Set = 0; 
+        Sprint_Set = 0;
+        _Ready();
     }
 
     public void player_Recover()
     {
-        this.Speed_Set = 250; 
-        this.Sprint_Set = 200;
-        this._Ready();
+        Speed_Set = 250; 
+        Sprint_Set = 200;
+        _Ready();
     }
     [Signal] public delegate void Pick_Item(String ID);
     public void pickup(Area2D instance,String ID)

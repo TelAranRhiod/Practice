@@ -34,6 +34,3 @@ ID = "101"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 173, 294 )
-
-[connection signal="body_entered" from="InstantPickup" to="InstantPickup" method="_on_InstantPickup_body_entered"]
-[connection signal="body_entered" from="ManualPickup" to="ManualPickup" method="_on_ManualPickup_body_entered"]

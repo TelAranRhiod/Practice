@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 using Godot.Collections;
 
 public class Item : Node2D
@@ -15,8 +15,8 @@ public class Item : Node2D
     
     public override void _Ready()
     {
-        Godot.File files = new Godot.File();
-        files.Open("res://Entities/Interactive_Entity/Items/Item_list.json",Godot.File.ModeFlags.Read);
+        File files = new File();
+        files.Open("res://Entities/Interactive_Entity/Items/Item_list.json",File.ModeFlags.Read);
         string text = files.GetAsText();
         var jsonFile =  JSON.Parse(text).Result;
         
@@ -27,7 +27,7 @@ public class Item : Node2D
         Item_Name = (String)ItemInfo["Item_Name"];
         Image_Directory = (String) ItemInfo["Item_Directory"];
         GD.Print(Item_Name+ "loaded with image" + Image_Directory);
-        Node child = this.GetChild(0);
+        Node child = GetChild(0);
         
         if (child is TextureRect)
         {
@@ -44,7 +44,7 @@ public class Item : Node2D
     public void setID(String id)
     {
         ID = id;
-        this._Ready();
+        _Ready();
     }
 
     

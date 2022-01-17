@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/BackGround.PNG.PNG" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Profile/Player_Profile_pngs/ItemHolder.PNG.PNG" type="Texture" id=2]
-[ext_resource path="res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player_Profile/ItemSlot.cs" type="Script" id=3]
+[ext_resource path="res://Player/Player_Profile/InventorySlots.cs" type="Script" id=4]
+[ext_resource path="res://Player/Player_Profile/EquipmentSlots.cs" type="Script" id=5]
+[ext_resource path="res://Player/Player_Profile/EquipSlot.cs" type="Script" id=6]
+[ext_resource path="res://Player/Player_Profile/HolsterSlot.cs" type="Script" id=7]
+[ext_resource path="res://Player/Player_Profile/HolsterSlots.cs" type="Script" id=8]
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
@@ -51,16 +56,18 @@ margin_bottom = -11.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 8
 columns = 6
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemSlots" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot1" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_right = 60.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot1"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -71,17 +78,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Item" parent="Inventory_Panel/InventorySlots/ItemSlots" instance=ExtResource( 3 )]
-position = Vector2( 30, 30 )
-scale = Vector2( 1.4, 1.4 )
-
-[node name="ItemSlots2" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot2" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 68.0
 margin_right = 128.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot2"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -92,13 +96,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots3" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot3" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 136.0
 margin_right = 196.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot3"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -109,13 +114,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots4" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot4" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 204.0
 margin_right = 264.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots4"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot4"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -126,13 +132,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots5" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot5" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 272.0
 margin_right = 332.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots5"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot5"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -143,13 +150,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots6" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot6" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 340.0
 margin_right = 400.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots6"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot6"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -160,13 +168,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots7" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot7" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_top = 65.0
 margin_right = 60.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots7"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot7"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -177,14 +186,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots8" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot8" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 68.0
 margin_top = 65.0
 margin_right = 128.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots8"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot8"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -195,14 +205,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots9" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot9" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 136.0
 margin_top = 65.0
 margin_right = 196.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots9"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot9"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -213,14 +224,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots10" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot10" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 204.0
 margin_top = 65.0
 margin_right = 264.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots10"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot10"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -231,14 +243,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots11" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot11" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 272.0
 margin_top = 65.0
 margin_right = 332.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots11"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot11"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -249,14 +262,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots12" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot12" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 340.0
 margin_top = 65.0
 margin_right = 400.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots12"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot12"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -267,13 +281,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots13" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot13" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_top = 130.0
 margin_right = 60.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots13"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot13"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -284,14 +299,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots14" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot14" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 68.0
 margin_top = 130.0
 margin_right = 128.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots14"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot14"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -302,14 +318,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots15" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot15" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 136.0
 margin_top = 130.0
 margin_right = 196.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots15"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot15"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -320,14 +337,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots16" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot16" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 204.0
 margin_top = 130.0
 margin_right = 264.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots16"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot16"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -338,14 +356,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots17" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot17" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 272.0
 margin_top = 130.0
 margin_right = 332.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots17"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot17"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -356,14 +375,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots18" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot18" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 340.0
 margin_top = 130.0
 margin_right = 400.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots18"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot18"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -374,13 +394,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots19" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot19" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_top = 195.0
 margin_right = 60.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots19"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot19"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -391,14 +412,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots20" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot20" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 68.0
 margin_top = 195.0
 margin_right = 128.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots20"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot20"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -409,14 +431,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots21" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot21" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 136.0
 margin_top = 195.0
 margin_right = 196.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots21"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot21"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -427,14 +450,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots22" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot22" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 204.0
 margin_top = 195.0
 margin_right = 264.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots22"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot22"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -445,14 +469,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots23" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot23" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 272.0
 margin_top = 195.0
 margin_right = 332.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots23"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot23"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -463,14 +488,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots24" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot24" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 340.0
 margin_top = 195.0
 margin_right = 400.0
 margin_bottom = 255.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots24"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot24"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -481,13 +507,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots25" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot25" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_top = 260.0
 margin_right = 60.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots25"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot25"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -498,14 +525,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots26" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot26" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 68.0
 margin_top = 260.0
 margin_right = 128.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots26"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot26"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -516,14 +544,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots27" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot27" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 136.0
 margin_top = 260.0
 margin_right = 196.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots27"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot27"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -534,14 +563,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots28" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot28" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 204.0
 margin_top = 260.0
 margin_right = 264.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots28"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot28"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -552,14 +582,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots29" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot29" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 272.0
 margin_top = 260.0
 margin_right = 332.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots29"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot29"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -570,14 +601,15 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots30" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
+[node name="ItemSlot30" type="PanelContainer" parent="Inventory_Panel/InventorySlots"]
 margin_left = 340.0
 margin_top = 260.0
 margin_right = 400.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 3 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlots30"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/InventorySlots/ItemSlot30"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -595,16 +627,18 @@ margin_left = -100.0
 margin_top = 30.0
 margin_right = -37.0
 margin_bottom = 348.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemSlots" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+[node name="EquipSlot1" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
 margin_right = 60.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 6 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/EquipSlot1"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -615,13 +649,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots2" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+[node name="EquipSlot2" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
 margin_top = 64.0
 margin_right = 60.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 6 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/EquipSlot2"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -632,13 +667,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots3" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+[node name="EquipSlot3" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
 margin_top = 128.0
 margin_right = 60.0
 margin_bottom = 188.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 6 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/EquipSlot3"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -649,13 +685,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots4" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+[node name="EquipSlot4" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
 margin_top = 192.0
 margin_right = 60.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 6 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots4"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/EquipSlot4"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -666,13 +703,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots5" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
+[node name="EquipSlot5" type="PanelContainer" parent="Inventory_Panel/EquipmentSlots"]
 margin_top = 256.0
 margin_right = 60.0
 margin_bottom = 316.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 6 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/ItemSlots5"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory_Panel/EquipmentSlots/EquipSlot5"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -718,7 +756,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="Holster_Panel"]
+[node name="HolsterSlots" type="GridContainer" parent="Holster_Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -730,16 +768,18 @@ margin_bottom = 30.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 8
 columns = 9
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemSlots" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot1" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_right = 60.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot1"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -750,13 +790,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots2" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot2" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 68.0
 margin_right = 128.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot2"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -767,13 +808,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots3" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot3" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 136.0
 margin_right = 196.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot3"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -784,13 +826,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots4" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot4" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 204.0
 margin_right = 264.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots4"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot4"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -801,13 +844,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots5" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot5" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 272.0
 margin_right = 332.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots5"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot5"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -818,13 +862,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots6" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot6" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 340.0
 margin_right = 400.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots6"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot6"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -835,13 +880,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots7" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot7" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 408.0
 margin_right = 468.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots7"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot7"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0
@@ -852,13 +898,14 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ItemSlots8" type="PanelContainer" parent="Holster_Panel/GridContainer"]
+[node name="HolsterSlot8" type="PanelContainer" parent="Holster_Panel/HolsterSlots"]
 margin_left = 476.0
 margin_right = 536.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+script = ExtResource( 7 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/GridContainer/ItemSlots8"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Holster_Panel/HolsterSlots/HolsterSlot8"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 53.0

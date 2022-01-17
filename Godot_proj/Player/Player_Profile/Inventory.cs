@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public class Inventory : Control
 {
@@ -19,7 +18,7 @@ public class Inventory : Control
     {
         if (Input.IsActionJustPressed("open_inventory"))
         {
-            this.toggle_Visibility();
+            toggle_Visibility();
         }
     }
 
@@ -29,11 +28,11 @@ public class Inventory : Control
         Visible = !Visible;
         if (Visible)
         {
-            (this.GetParent() as Player).player_Stop();
+            (GetParent() as Player).player_Stop();
         }
         else
         {
-            (this.GetParent() as Player).player_Recover();
+            (GetParent() as Player).player_Recover();
         }
         GetParent()._Ready();
     }
