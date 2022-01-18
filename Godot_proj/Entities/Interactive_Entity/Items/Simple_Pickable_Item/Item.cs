@@ -29,11 +29,15 @@ public class Item : Node2D
         GD.Print(Item_Name+ "loaded with image" + Image_Directory);
         Node child = GetChild(0);
         
-        if (child is TextureRect)
+        if (child is Sprite)
         {
-            TextureRect texture = child as TextureRect;
-            texture.Texture = GD.Load(Image_Directory) as Texture;
+            Sprite s  = child as Sprite;
+            s.Texture = GD.Load(Image_Directory) as Texture;
+            var scale = new Vector2(0.07f, 0.07f);
+            s.SetScale(scale);
         }
+
+        files.Close();
     }
 
     public String getID()

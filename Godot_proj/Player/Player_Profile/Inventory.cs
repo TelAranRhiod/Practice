@@ -42,15 +42,16 @@ public class Inventory : Control
     {
         if (input is InputEventMouseButton && input.IsPressed() && (input as InputEventMouseButton).ButtonIndex == 1)
         {
-            GD.Print(slot.Name);
+            GD.Print(slot.Name + " Item is" + slot.GetNodeOrNull("Item"));
+            var child = slot.GetNodeOrNull("Item") as Item;
             if (slot.is_Occupied()&& ChosenItem == null)
             {
                 GD.Print("have chosen");
-                var item = slot.GetNodeOrNull("Item") ;
-                ChosenItem = item.Duplicate() as Item;
+                
+                ChosenItem = child.Duplicate() as Item;
                 ChosenItem.Position = GetLocalMousePosition();
                 this.AddChild(ChosenItem);
-                item.QueueFree();
+                child.QueueFree();
             }
             else if (!slot.is_Occupied() && ChosenItem != null)
             {
@@ -61,7 +62,18 @@ public class Inventory : Control
                 ChosenItem = null;
                 
             }
-            
+            else if (slot.is_Occupied() && ChosenItem != null)
+            {
+                RemoveChild(ChosenItem);
+                slot.RemoveChild(child);
+                var item = ChosenItem.Duplicate() as Item;
+                item.Position = new Vector2(30, 30);
+                slot.AddChild(item);
+                ChosenItem = child.Duplicate() as Item;
+                ChosenItem.Position = GetLocalMousePosition();
+                AddChild(ChosenItem);
+                child.QueueFree();
+            }
         }
     }
     
