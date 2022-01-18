@@ -40,10 +40,11 @@ public class Player : KinematicBody2D
         sprintBonus = Sprint_Set;
         t.SetWaitTime(interact_waittime);
         t.SetOneShot(true);
-        if (t.GetParent()==null)
+        if (t.GetParent() == null)
         {
             AddChild(t);
-        }
+        } 
+        //Connect("TestSignal", this.GetNode("Inventory"),nameof(_drop_Item));
     }
 
     public override void _Process(float delta)
@@ -103,7 +104,13 @@ public class Player : KinematicBody2D
     {
         EmitSignal(nameof(Pick_Item),i);
         instance.QueueFree();
-        GD.Print("Picked up "+ instance + i);
+        GD.Print("TestSignal "+ instance + i);
     }
-    
+
+
+    public void _drop_Item(Item item)
+    {
+        //GD.Print(item.ID);
+        ((Game) GetParent()).spawnItem(item,Position);
+    }
 }

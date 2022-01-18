@@ -9,8 +9,9 @@ public class Inventory : Control
     // private int a = 2;
     // private string b = "text";
     private Item ChosenItem = null;
-
-    private Item temp = null;
+    
+    [Signal] public delegate void TestSignal(Item i);
+    
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -28,6 +29,7 @@ public class Inventory : Control
             ItemSlot slot = node as ItemSlot;
             slot.Connect("gui_input", this, "_on_gui_input", new Godot.Collections.Array() {slot});
         }
+        
     }
 
     public override void _Input(InputEvent @event)
@@ -75,6 +77,18 @@ public class Inventory : Control
                 child.QueueFree();
             }
         }
+        else if (input is InputEventMouseButton && input.IsPressed() && (input as InputEventMouseButton).ButtonIndex == 2)
+        {
+            var child = slot.GetNodeOrNull("Item") as Item;
+            if (Input.IsActionPressed("sprint"))
+            {
+                if (slot.is_Occupied())
+                {
+                    EmitSignal(nameof(TestSignal), child.Duplicate() as Item );
+                    child.QueueFree();
+                }
+            }
+        }
     }
     
     public void _on_pick_up(Item i)
@@ -94,6 +108,7 @@ public class Inventory : Control
         }
         foreach (ItemSlot itemSlot in GetNode("Inventory_Panel").GetNode("InventorySlots").GetChildren())
         {
+            
             if (!itemSlot.is_Occupied())
             {
                 GD.Print("1"); 
@@ -108,10 +123,10 @@ public class Inventory : Control
         if (Input.IsActionJustPressed("open_inventory"))
         {
             toggle_Visibility();
-            
         }
     }
 
+    
     public void toggle_Visibility()
     {
         GD.Print("toggled");
@@ -123,14 +138,16 @@ public class Inventory : Control
         }
         else
         {
+            if (ChosenItem != null)
+            {
+                EmitSignal(nameof(TestSignal), ChosenItem.Duplicate() as Item);
+                ChosenItem.QueueFree();
+                ChosenItem = null;
+            }
             (GetParent() as Player).player_Recover();
             (GetParent() as Player).SetProcess(true);
         }
         GetParent()._Ready();
     }
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    
 }

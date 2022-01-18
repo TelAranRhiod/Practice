@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Interactive_Entity/Instant_Pickup/InstantPickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Interactive_Entity/Manual_Pickup/ManualPickup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/Interactive_Entity/Interact_Only/Interact_Only.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Interactive_Entity/Interact_Only/Crate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level_Test/Game.cs" type="Script" id=7]
 
 [node name="Game" type="Node2D"]
@@ -14,9 +15,12 @@ script = ExtResource( 7 )
 [node name="Interact_Only" parent="." instance=ExtResource( 5 )]
 position = Vector2( 400, 263 )
 
-[node name="Item" parent="Interact_Only" instance=ExtResource( 3 )]
-position = Vector2( 1, 0 )
-ID = "100"
+[node name="Crate" parent="Interact_Only" instance=ExtResource( 6 )]
+
+[node name="Interact_Only2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 542, 161 )
+
+[node name="Crate" parent="Interact_Only2" instance=ExtResource( 6 )]
 
 [node name="InstantPickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 423, 381 )

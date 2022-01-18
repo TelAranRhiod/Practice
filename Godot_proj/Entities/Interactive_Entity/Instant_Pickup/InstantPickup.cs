@@ -24,13 +24,15 @@ public class InstantPickup : Area2D
         
         if (!getMagnet)
         {
-            Position += vec * initial_speed;
+            Position += vec/10 * initial_speed;
             var AreaArray = GetOverlappingAreas();
                  foreach (var body in AreaArray)
                  {
                      if (((Area2D) body).Name == "PlayerMagnetArea"){getMagnet = true;target = ((Area2D) body).GetParent().Name;}
                      else{return;}
                  }
+
+                 initial_speed -= (initial_speed - 0) / 10;
         }else {
             vec =  ((Node2D)GetParent().GetNode(target)).Position - Position;
             if (vec.Length() >= magnet_threshold)
@@ -54,6 +56,7 @@ public class InstantPickup : Area2D
         
         ((Player)body).pickup(this, ((Item)GetNode("Item")));
     }
+
     
     public void setItem(String id)
     {

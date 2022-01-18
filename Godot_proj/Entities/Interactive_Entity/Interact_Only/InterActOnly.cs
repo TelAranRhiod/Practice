@@ -6,13 +6,10 @@ public class InterActOnly : Area2D
     [Export] public int Delay = 2;
     public void Act()
     {
-        try
+        if (GetChild(1) is Crate)
         {
-            GD.Print("acting on Interact only");
-        }
-        catch (InvalidCastException e)
-        {
-            GD.Print(e);
+            Crate crate = GetChild(1) as Crate;
+            crate.act();
         }
     }
     

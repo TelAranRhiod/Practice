@@ -13,20 +13,31 @@ public class Game : Node2D
         
     }
 
-    public void spawnItem(String ID, Vector2 position)
+    public void spawnItem(Item i, Vector2 position)
     {
-        var InstantPicksourse =(PackedScene) ResourceLoader.Load(
+        var Picksourse =(PackedScene) ResourceLoader.Load(
             "res://Entities/Interactive_Entity/Manual_Pickup/ManualPickup.tscn") ;
-        ManualPickup instantPickup = InstantPicksourse.Instance() as ManualPickup;
-        this.AddChild(instantPickup);
-        var Itemsourse =(PackedScene) ResourceLoader.Load(
-            "res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn") ;
-        Item item = Itemsourse.Instance() as Item;
-        item.setID(ID);
-        instantPickup.AddChild(item);
-        
-        instantPickup.Position = position;
+        ManualPickup Pickup = Picksourse.Instance() as ManualPickup;
+        this.AddChild(Pickup);
+        i.Position = new Vector2(0, 0);
+        Pickup.AddChild(i);
+        Pickup.Position = position;
         //instantPickup.Position = position as Pos;
+    }
+
+    public void spawnItem_instant(Item i, Vector2 position)
+    {
+        RandomNumberGenerator randi = new RandomNumberGenerator();
+        var Picksourse =(PackedScene) ResourceLoader.Load(
+            "res://Entities/Interactive_Entity/Instant_Pickup/InstantPickup.tscn") ;
+        InstantPickup Pickup = Picksourse.Instance() as InstantPickup;
+        this.AddChild(Pickup);
+        i.Position = new Vector2(0, 0);
+        
+        Pickup.initial_speed =  new RandomNumberGenerator().RandiRange(0,2);
+        Pickup.setInitialDirection(new Vector2(randi.RandiRange(-10, 10), randi.RandiRange(-10, 10)) );
+        Pickup.AddChild(i);
+        Pickup.Position = position;
     }
 
     public Vector2 getPlayerPosition()
