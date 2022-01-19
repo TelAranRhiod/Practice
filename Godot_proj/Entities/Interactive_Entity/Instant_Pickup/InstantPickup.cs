@@ -54,7 +54,7 @@ public class InstantPickup : Area2D
     public void _on_InstantPickup_body_entered(Node body)
     {
         
-        ((Player)body).pickup(this, ((Item)GetNode("Item")));
+        ((Player)body).get_instant(this, ((Item)GetNode("Item")));
     }
 
     

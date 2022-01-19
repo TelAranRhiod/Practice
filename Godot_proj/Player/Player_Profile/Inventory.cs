@@ -118,6 +118,26 @@ public class Inventory : Control
         }
     }
 
+    public Boolean is_full()
+    {
+        foreach (var node in GetNode("Inventory_Panel/InventorySlots").GetChildren())
+        {
+            ItemSlot slot = node as ItemSlot;
+            if (!slot.is_Occupied())
+            {
+                return false;
+            }
+        }
+        foreach (var node in GetNode("Holster_Panel/HolsterSlots").GetChildren())
+        {
+            ItemSlot slot = node as ItemSlot;
+            if (!slot.is_Occupied())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public override void _Process(float delta)
     {
         if (Input.IsActionJustPressed("open_inventory"))

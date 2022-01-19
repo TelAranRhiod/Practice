@@ -30,8 +30,10 @@ public class ManualPickup : Area2D
         
     }
     public override void _Ready()
+    
     {
-        GetParent().GetNode("Player").Connect("Interact", this, nameof(_on_Player_Interact));
+        
+        GetTree().GetRoot().GetNode("Game").GetNode("Player").Connect("Interact", this, nameof(_on_Player_Interact));
         Connect("body_entered", this, nameof(_on_ManualPickup_body_entered));
     }
     public void _on_Player_Interact(Node node)

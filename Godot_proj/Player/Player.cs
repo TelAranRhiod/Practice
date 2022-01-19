@@ -1,5 +1,9 @@
 using System;
+using System.Collections;
+using System.Numerics;
 using Godot;
+using Array = Godot.Collections.Array;
+using Vector2 = Godot.Vector2;
 
 public class Player : KinematicBody2D
 {
@@ -10,7 +14,8 @@ public class Player : KinematicBody2D
     [Export] public int speed;
     [Export] public float interact_waittime = 1;
 
-    
+    public Array expandable_Items = new Array();
+    public ArrayList expandable_Items_quantity = new ArrayList();
 
     public override void _PhysicsProcess(float delta)
     {
@@ -44,7 +49,7 @@ public class Player : KinematicBody2D
         {
             AddChild(t);
         } 
-        //Connect("TestSignal", this.GetNode("Inventory"),nameof(_drop_Item));
+        
     }
 
     public override void _Process(float delta)
@@ -79,7 +84,7 @@ public class Player : KinematicBody2D
             {
                 t_started = false;
                 GD.Print("justpressed");
-                EmitSignal(nameof(Interact), this);
+                if(!((Inventory)GetNode("Inventory")).is_full()){EmitSignal(nameof(Interact), this);}
                 t.Stop();
                 t.SetWaitTime(interact_waittime);
             }
@@ -106,6 +111,23 @@ public class Player : KinematicBody2D
         instance.QueueFree();
         GD.Print("TestSignal "+ instance + i);
     }
+    
+    public void get_instant(Area2D instance,Item i)
+    {
+        int indexing = 0;
+        foreach (Item item in expandable_Items)
+        {
+            if (item.ID == i.ID)
+            {
+                indexing = expandable_Items.IndexOf(item);
+            }
+          //  expandable_Items_quantity[indexing] += 1;
+          return;
+        }
+
+        expandable_Items.Add(i.Duplicate() as Item);
+        expandable_Items_quantity.Add(1);
+    } 
 
 
     public void _drop_Item(Item item)
