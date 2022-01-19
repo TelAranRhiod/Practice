@@ -17,28 +17,33 @@ public class Crate : Node2D
     {
         Connect(nameof(crate_spawn_item), GetTree().GetRoot().GetNode("Game"), "spawnItem_instant");
         Connect(nameof(crate_spawn_manual), GetTree().GetRoot().GetNode("Game"), "spawnItem_Manual");
-        is_Opened = false;
+        initialize();
+    }
 
+    private void initialize()
+    {
+        is_Opened = false;
         
-        randi.Randomize();
-        int item_number = randi.RandiRange(0,3);
-         
-         for (int i = 0; i< item_number;i++)
-         {
-             var Picksourse =(PackedScene) ResourceLoader.Load(
-                 "res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn") ;
-             Item item = Picksourse.Instance() as Item;
-             randi.Randomize();
-              if (get_Pool(30))
-              {
-                  item.setID("101");
-              }
-              else
-             {
-                 item.setID(randi.RandiRange(1,3).ToString());
-             } 
-             itemlist +=  new Array(item);
-         }
+                
+                randi.Randomize();
+                int item_number = randi.RandiRange(0,3);
+                 
+                 for (int i = 0; i< item_number;i++)
+                 {
+                     var Picksourse =(PackedScene) ResourceLoader.Load(
+                         "res://Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.tscn") ;
+                     Item item = Picksourse.Instance() as Item;
+                     randi.Randomize();
+                      if (get_Pool(30))
+                      {
+                          item.setID("101");
+                      }
+                      else
+                     {
+                         item.setID(randi.RandiRange(1,3).ToString());
+                     } 
+                     itemlist +=  new Array(item);
+                 }
     }
     
     [Signal] public delegate void crate_spawn_item(Item i, Vector2 position);
@@ -70,13 +75,12 @@ public class Crate : Node2D
             is_Opened = true;
             if (get_Pool(20))
             {
-                this._Ready();
+                this.initialize();  //randomly hides more item, doesn't tell player
             }
         }
-        
     }
 
-
+    //On given a likly hoood, return if the pull from pool is success
     private Boolean get_Pool(float i)
     {
         randi.Randomize();
