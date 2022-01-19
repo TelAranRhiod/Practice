@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Numerics;
 using Godot;
 using Array = Godot.Collections.Array;
@@ -15,7 +16,7 @@ public class Player : KinematicBody2D
     [Export] public float interact_waittime = 1;
 
     public Array expandable_Items = new Array();
-    public ArrayList expandable_Items_quantity = new ArrayList();
+    public List<int>  expandable_Items_quantity= new List<int>();
 
     public override void _PhysicsProcess(float delta)
     {
@@ -84,13 +85,24 @@ public class Player : KinematicBody2D
             {
                 t_started = false;
                 GD.Print("justpressed");
-                if(!((Inventory)GetNode("Inventory")).is_full()){EmitSignal(nameof(Interact), this);}
+                //if (!((Inventory) GetNode("Inventory")).is_full())
+                {
+                    EmitSignal(nameof(Interact), this);
+                }
                 t.Stop();
                 t.SetWaitTime(interact_waittime);
             }
         }
     }
 
+    public Boolean fullIven()
+    {
+        return ((Inventory) GetNode("Inventory")).is_full();
+    }
+   
+        
+        
+    
     public void player_Stop()
     {
         Speed_Set = 0; 
@@ -114,19 +126,25 @@ public class Player : KinematicBody2D
     
     public void get_instant(Area2D instance,Item i)
     {
+        instance.QueueFree();
+        GD.Print(i.ID);
         int indexing = 0;
         foreach (Item item in expandable_Items)
         {
             if (item.ID == i.ID)
             {
                 indexing = expandable_Items.IndexOf(item);
+                expandable_Items_quantity[indexing] += 1;
+                GD.Print(expandable_Items.ToString());
+                GD.Print(expandable_Items_quantity[0].ToString());
+                return;
             }
-          //  expandable_Items_quantity[indexing] += 1;
-          return;
         }
-
         expandable_Items.Add(i.Duplicate() as Item);
         expandable_Items_quantity.Add(1);
+        GD.Print(expandable_Items.ToString());
+        GD.Print(expandable_Items_quantity[0].ToString() );
+        
     } 
 
 

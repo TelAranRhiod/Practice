@@ -29,6 +29,11 @@ public class ManualPickup : Area2D
         }
         
     }
+
+    private void stop_pickup()
+    {
+        getMagnet = false;
+    }
     public override void _Ready()
     
     {
@@ -51,7 +56,14 @@ public class ManualPickup : Area2D
                 {
                     if (target == bod.Name )
                     {
-                        ((Player) node).pickup(this,((Item)GetNode("Item")));
+                        if (((Player)node).fullIven())
+                        {
+                            stop_pickup();
+                        }
+                        else
+                        {
+                            ((Player)node).pickup(this, ((Item)GetNode("Item"))); 
+                        }
                     }
                 }
                 
@@ -63,7 +75,15 @@ public class ManualPickup : Area2D
     {
         if (getMagnet)
         {
-            ((Player)body).pickup(this, ((Item)GetNode("Item")));
+            if (((Player)body).fullIven())
+            {
+               stop_pickup();
+            }
+            else
+            {
+               ((Player)body).pickup(this, ((Item)GetNode("Item"))); 
+            }
+            
         }
     }
 

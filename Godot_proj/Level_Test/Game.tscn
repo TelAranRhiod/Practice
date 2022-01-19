@@ -35,13 +35,18 @@ position = Vector2( 452, 410 )
 ID = "3"
 
 [node name="InstantPickup3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 362, 517 )
+position = Vector2( 452, 410 )
 
 [node name="Item" parent="InstantPickup3" instance=ExtResource( 3 )]
+
+[node name="InstantPickup4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 452, 410 )
+
+[node name="Item" parent="InstantPickup4" instance=ExtResource( 3 )]
 ID = "2"
 
 [node name="ManualPickup" parent="." instance=ExtResource( 4 )]
-position = Vector2( 487, 288 )
+position = Vector2( 537, 260 )
 
 [node name="Item" parent="ManualPickup" instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
