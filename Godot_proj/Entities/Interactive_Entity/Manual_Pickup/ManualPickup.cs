@@ -7,14 +7,25 @@ public class ManualPickup : Area2D
     // private int a = 2;
     // private string b = "text";
     [Export] public int magnet_speed_scaler = 20;
-    
+    [Export] public float initial_speed;
     private Boolean getMagnet;
     private string target = "";
+    private  Vector2 vec;
+    public void setInitialDirection(Vector2 direction)
+    {
+        vec = direction;
+    }
     public override void _PhysicsProcess(float delta)
     {
         if (getMagnet)
         {
             Position += (((Node2D) GetParent().GetNode(target)).Position - Position) / magnet_speed_scaler;
+        }
+        else
+        {
+            Position += vec/10 * initial_speed;
+            
+            initial_speed = (initial_speed - 0) / 10;
         }
         
     }

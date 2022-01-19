@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="48bb29cf-eb35-45e8-8fc5-5ca3d26b5347" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Item_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Item_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/metadata/scripts_metadata.editor" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/metadata/scripts_metadata.editor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/metadata/scripts_metadata.editor_player" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/metadata/scripts_metadata.editor_player" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/temp/bin/Debug/Godot Proj.dll" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/temp/bin/Debug/Godot Proj.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/temp/bin/Debug/Godot Proj.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/temp/bin/Debug/Godot Proj.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/temp/obj/Debug/Godot Proj.dll" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/temp/obj/Debug/Godot Proj.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/temp/obj/Debug/Godot Proj.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/temp/obj/Debug/Godot Proj.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Instant_Pickup/InstantPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Instant_Pickup/InstantPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Interact_Only/Crate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Interact_Only/Crate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Manual_Pickup/ManualPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Manual_Pickup/ManualPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level_Test/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Level_Test/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level_Test/Game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Level_Test/Game.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

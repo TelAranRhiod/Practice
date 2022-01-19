@@ -23,15 +23,41 @@ position = Vector2( 542, 161 )
 [node name="Crate" parent="Interact_Only2" instance=ExtResource( 6 )]
 
 [node name="InstantPickup" parent="." instance=ExtResource( 2 )]
-position = Vector2( 423, 381 )
+position = Vector2( 235, 405 )
 
 [node name="Item" parent="InstantPickup" instance=ExtResource( 3 )]
 ID = "3"
 
+[node name="InstantPickup2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 452, 410 )
+
+[node name="Item" parent="InstantPickup2" instance=ExtResource( 3 )]
+ID = "3"
+
+[node name="InstantPickup3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 362, 517 )
+
+[node name="Item" parent="InstantPickup3" instance=ExtResource( 3 )]
+ID = "2"
+
 [node name="ManualPickup" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 318 )
+position = Vector2( 487, 288 )
 
 [node name="Item" parent="ManualPickup" instance=ExtResource( 3 )]
+position = Vector2( 1, 0 )
+ID = "101"
+
+[node name="ManualPickup2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 609, 247 )
+
+[node name="Item" parent="ManualPickup2" instance=ExtResource( 3 )]
+position = Vector2( 1, 0 )
+ID = "101"
+
+[node name="ManualPickup3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 562, 483 )
+
+[node name="Item" parent="ManualPickup3" instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
 ID = "101"
 

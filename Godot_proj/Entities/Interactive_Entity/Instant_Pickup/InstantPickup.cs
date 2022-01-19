@@ -32,7 +32,7 @@ public class InstantPickup : Area2D
                      else{return;}
                  }
 
-                 initial_speed -= (initial_speed - 0) / 10;
+                 initial_speed = (initial_speed - 0) / 10;
         }else {
             vec =  ((Node2D)GetParent().GetNode(target)).Position - Position;
             if (vec.Length() >= magnet_threshold)
