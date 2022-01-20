@@ -10,6 +10,7 @@ public class Player : KinematicBody2D
 {
     [Export] public int Speed_Set = 250;
     [Export] public int Sprint_Set = 200;
+    [Export] public int Health = 100;
     private  int moveSpeed;
     private int sprintBonus;
     [Export] public int speed;
@@ -145,9 +146,23 @@ public class Player : KinematicBody2D
         GD.Print(expandable_Items.ToString());
         GD.Print(expandable_Items_quantity[0].ToString() );
         
-    } 
-
-
+    }
+    public void receive_Damage(int damage)
+    {
+        if (Health > damage)
+        {
+            Health = Health - damage;
+            GD.Print("Taken Damage");
+        }
+        else
+        {
+            
+        }
+    }
+    public int get_Health()
+    {
+        return Health;
+    }
     public void _drop_Item(Item item)
     {
         //GD.Print(item.ID);

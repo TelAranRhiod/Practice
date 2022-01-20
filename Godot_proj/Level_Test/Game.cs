@@ -21,7 +21,11 @@ public class Game : Node2D
         this.AddChild(Pickup);
         i.Position = new Vector2(0, 0);
         Pickup.AddChild(i);
-        Pickup.Position = position;
+        randi.Randomize();
+        int x = randi.RandiRange(-10, 10);
+        randi.Randomize();
+        int y = randi.RandiRange(-10, 10);
+        Pickup.Position = position +  new Vector2(x,y);
         //instantPickup.Position = position as Pos;
     }
 

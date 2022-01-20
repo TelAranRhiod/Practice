@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Interactive_Entity/Instant_Pickup/InstantPickup.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Entities/Interactive_Entity/Interact_Only/Interact_Only.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Entities/Interactive_Entity/Interact_Only/Crate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level_Test/Game.cs" type="Script" id=7]
+[ext_resource path="res://Entities/Damaging_Entity/Damaging_Particle.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 24, 18 )
@@ -69,3 +70,6 @@ ID = "101"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 173, 294 )
+
+[node name="Damaging_Particle" parent="." instance=ExtResource( 8 )]
+position = Vector2( -166, 309 )
