@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Player_Profile/Inventory.cs" type="Script" id=1]
+[ext_resource path="res://Player/Player_Profile/Inventory.tscn" type="PackedScene" id=2]
+
+[node name="UI" type="CanvasLayer"]
+layer = 3
+
+[node name="UI_expandable_panel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Control" parent="." instance=ExtResource( 2 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 102.0
+margin_top = 119.0
+margin_right = 102.0
+margin_bottom = 119.0
+rect_scale = Vector2( 0.801105, 0.8 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -50,8 +50,9 @@ public class Player : KinematicBody2D
         if (t.GetParent() == null)
         {
             AddChild(t);
-        } 
-        
+        }
+
+    
     }
 
     public override void _Process(float delta)
@@ -98,7 +99,7 @@ public class Player : KinematicBody2D
 
     public Boolean fullIven()
     {
-        return ((Inventory) GetNode("Inventory")).is_full();
+        return ((Inventory)GetParent().GetNode("UI").GetNode("Inventory")).is_full();
     }
    
         
@@ -156,16 +157,17 @@ public class Player : KinematicBody2D
         }
         else
         {
-            
+            Health = 0;
+            GD.Print("Player Health is 0");
         }
     }
     public int get_Health()
     {
         return Health;
     }
+    
     public void _drop_Item(Item item)
     {
-        //GD.Print(item.ID);
         ((Game) GetParent()).spawnItem(item,Position);
     }
 }

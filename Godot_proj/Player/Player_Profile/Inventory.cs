@@ -16,7 +16,7 @@ public class Inventory : Control
     public override void _Ready()
     {
         Visible = false; 
-        GetParent().
+        GetTree().GetRoot().GetNode("Game").GetNode("Player").
         Connect("Pick_Item", this,nameof(_on_pick_up));
 
         foreach (var node in GetNode("Inventory_Panel/InventorySlots").GetChildren())
@@ -29,7 +29,7 @@ public class Inventory : Control
             ItemSlot slot = node as ItemSlot;
             slot.Connect("gui_input", this, "_on_gui_input", new Godot.Collections.Array() {slot});
         }
-        
+        Connect("TestSignal", GetTree().GetRoot().GetNode("Game").GetNode("Player"),"_drop_Item");
     }
 
     public override void _Input(InputEvent @event)
@@ -146,15 +146,15 @@ public class Inventory : Control
         }
     }
 
-    
     public void toggle_Visibility()
     {
+        Player player = GetTree().GetRoot().GetNode("Game").GetNode("Player") as Player;
         GD.Print("toggled");
         Visible = !Visible;
         if (Visible)
         {
-            (GetParent() as Player).player_Stop();
-            (GetParent() as Player).SetProcess(false);
+            player.player_Stop();
+            player.SetProcess(false);
         }
         else
         {
@@ -164,10 +164,10 @@ public class Inventory : Control
                 ChosenItem.QueueFree();
                 ChosenItem = null;
             }
-            (GetParent() as Player).player_Recover();
-            (GetParent() as Player).SetProcess(true);
+            player.player_Recover();
+            player.SetProcess(true);
         }
-        GetParent()._Ready();
+        player._Ready();
     }
     
 }
