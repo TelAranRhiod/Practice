@@ -16,10 +16,10 @@ __meta__ = {
 [node name="Inventory_Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -206.0
-margin_top = 98.0
-margin_right = 211.0
-margin_bottom = 456.0
+margin_left = -213.0
+margin_top = 66.0
+margin_right = 204.0
+margin_bottom = 360.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -182,48 +182,15 @@ margin_top = 195.0
 margin_right = 400.0
 margin_bottom = 255.0
 
-[node name="ItemSlot25" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_top = 260.0
-margin_bottom = 320.0
-
-[node name="ItemSlot26" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_left = 68.0
-margin_top = 260.0
-margin_right = 128.0
-margin_bottom = 320.0
-
-[node name="ItemSlot27" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_left = 136.0
-margin_top = 260.0
-margin_right = 196.0
-margin_bottom = 320.0
-
-[node name="ItemSlot28" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_left = 204.0
-margin_top = 260.0
-margin_right = 264.0
-margin_bottom = 320.0
-
-[node name="ItemSlot29" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_left = 272.0
-margin_top = 260.0
-margin_right = 332.0
-margin_bottom = 320.0
-
-[node name="ItemSlot30" parent="Inventory_Panel/InventorySlots" instance=ExtResource( 3 )]
-margin_left = 340.0
-margin_top = 260.0
-margin_right = 400.0
-margin_bottom = 320.0
-
 [node name="Holster_Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -213.0
-margin_top = -84.0
-margin_right = 213.0
+margin_left = -217.0
+margin_top = -179.0
+margin_right = 209.0
+margin_bottom = -95.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

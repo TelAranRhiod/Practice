@@ -8,7 +8,7 @@
 [ext_resource path="res://Entities/Interactive_Entity/Interact_Only/Crate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level_Test/Game.cs" type="Script" id=7]
 [ext_resource path="res://Entities/Damaging_Entity/Damaging_Particle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 24, 18 )
