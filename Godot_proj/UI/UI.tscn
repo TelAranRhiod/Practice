@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UI/Expandable Info.cs" type="Script" id=1]
+[ext_resource path="res://UI/Expandable_Info.cs" type="Script" id=1]
 [ext_resource path="res://Player/Player_Profile/Inventory.tscn" type="PackedScene" id=2]
 
 [node name="UI" type="CanvasLayer"]
@@ -13,7 +13,7 @@ margin_right = 102.0
 margin_bottom = 119.0
 rect_scale = Vector2( 0.801105, 0.8 )
 
-[node name="Expandable Info" type="MarginContainer" parent="."]
+[node name="Expandable_Info" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
@@ -25,9 +25,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Top" type="HBoxContainer" parent="Expandable Info"]
+[node name="Top" type="HBoxContainer" parent="Expandable_Info"]
 margin_right = 984.0
 margin_bottom = 30.0
 
-[node name="Top_HBox" type="HBoxContainer" parent="Expandable Info/Top"]
+[node name="Top_HBox" type="HBoxContainer" parent="Expandable_Info/Top"]
 margin_bottom = 30.0

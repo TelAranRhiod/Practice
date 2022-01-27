@@ -10,7 +10,9 @@ public class Inventory : Control
     // private string b = "text";
     private Item ChosenItem = null;
     
-    [Signal] public delegate void TestSignal(Item i);
+    [Signal] 
+    public delegate void DropItem(Item i);
+
     
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -29,7 +31,7 @@ public class Inventory : Control
             ItemSlot slot = node as ItemSlot;
             slot.Connect("gui_input", this, "_on_gui_input", new Godot.Collections.Array() {slot});
         }
-        Connect("TestSignal", GetTree().GetRoot().GetNode("Game").GetNode("Player"),"_drop_Item");
+        Connect("DropItem", GetTree().GetRoot().GetNode("Game").GetNode("Player"),"_drop_Item");
     }
 
     public override void _Input(InputEvent @event)
@@ -84,7 +86,7 @@ public class Inventory : Control
             {
                 if (slot.is_Occupied())
                 {
-                    EmitSignal(nameof(TestSignal), child.Duplicate() as Item );
+                    EmitSignal(nameof(DropItem), child.Duplicate() as Item );
                     child.QueueFree();
                 }
             }
@@ -95,7 +97,7 @@ public class Inventory : Control
     {
         pickup(i);
     }
-
+    
     private void pickup(Item i)
     {
         foreach (ItemSlot itemSlot in GetNode("Holster_Panel").GetNode("HolsterSlots").GetChildren())
@@ -103,6 +105,7 @@ public class Inventory : Control
             {
                 GD.Print("1"); 
                 itemSlot.addItem(i);
+                refreshHolster();
                 return;
             }
         }
@@ -118,6 +121,10 @@ public class Inventory : Control
         }
     }
 
+    private void refreshHolster()
+    {
+        (GetNode("Holster_Panel").GetNode("HolsterSlots") as HolsterSlots).emitHolding();
+    }
     public Boolean is_full()
     {
         foreach (var node in GetNode("Inventory_Panel/InventorySlots").GetChildren())
@@ -143,6 +150,7 @@ public class Inventory : Control
         if (Input.IsActionJustPressed("open_inventory"))
         {
             toggle_Visibility();
+           refreshHolster();
         }
     }
 
@@ -160,7 +168,7 @@ public class Inventory : Control
         {
             if (ChosenItem != null)
             {
-                EmitSignal(nameof(TestSignal), ChosenItem.Duplicate() as Item);
+                EmitSignal(nameof(DropItem), ChosenItem.Duplicate() as Item);
                 ChosenItem.QueueFree();
                 ChosenItem = null;
             }
