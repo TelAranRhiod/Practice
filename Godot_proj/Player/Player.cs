@@ -153,7 +153,7 @@ public class Player : KinematicBody2D
         if (Health > damage)
         {
             Health = Health - damage;
-            GD.Print("Taken Damage");
+            GD.Print("Taken Damage" + Health.ToString());
         }
         else
         {
