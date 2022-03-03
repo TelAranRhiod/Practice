@@ -95,6 +95,12 @@ public class Player : KinematicBody2D
                 t.SetWaitTime(interact_waittime);
             }
         }
+
+        if (Input.IsActionJustPressed("fire_weapon"))
+        {
+            Holding hold = GetNode("Holding") as Holding;
+            hold.use();
+        }
     }
 
     public Boolean fullIven()

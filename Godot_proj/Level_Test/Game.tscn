@@ -30,12 +30,6 @@ position = Vector2( 235, 405 )
 [node name="Item" parent="InstantPickup" instance=ExtResource( 3 )]
 ID = "3"
 
-[node name="InstantPickup3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 452, 410 )
-
-[node name="Item" parent="InstantPickup3" instance=ExtResource( 3 )]
-position = Vector2( 1, -1 )
-
 [node name="InstantPickup4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 452, 410 )
 
@@ -64,7 +58,6 @@ position = Vector2( 1, 0 )
 ID = "101"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 173, 294 )
 
 [node name="Damaging_Particle" parent="." instance=ExtResource( 8 )]
 position = Vector2( -166, 309 )
