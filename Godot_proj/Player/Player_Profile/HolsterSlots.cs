@@ -35,7 +35,7 @@ public class HolsterSlots : GridContainer
     {
         var array = GetChildren();
         ItemSlot s = array[Current] as ItemSlot;
-        EmitSignal(nameof(HoldCurrent), s.Duplicate());
+        EmitSignal(nameof(HoldCurrent), s);
     }
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)

@@ -101,6 +101,7 @@ public class Player : KinematicBody2D
             Holding hold = GetNode("Holding") as Holding;
             hold.use();
         }
+        
     }
 
     public Boolean fullIven()
@@ -156,16 +157,17 @@ public class Player : KinematicBody2D
     }
     public void receive_Damage(int damage)
     {
-        if (Health > damage)
+        if ( 100 > Health - damage && Health - damage > 0)
         {
             Health = Health - damage;
             GD.Print("Taken Damage" + Health.ToString());
         }
-        else
+        else if(Health - damage < 0)
         {
             Health = 0;
             GD.Print("Player Health is 0");
         }
+        GD.Print(Health.ToString());
     }
     public int get_Health()
     {

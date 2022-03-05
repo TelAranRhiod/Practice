@@ -11,8 +11,8 @@ public class Item : Node2D
     public string ID = "1";
     private String Item_Name;
     private String Image_Directory ;
-
-    
+    private int damage = 0;
+    private int usage = 0;
     public override void _Ready()
     {
         File files = new File();
@@ -26,6 +26,9 @@ public class Item : Node2D
         
         Item_Name = (String)ItemInfo["Item_Name"];
         Image_Directory = (String) ItemInfo["Item_Directory"];
+        damage = ((String) ItemInfo["Item_Damage"]).ToInt();
+        usage = ((String) ItemInfo["Item_usage"]).ToInt();
+        
         GD.Print(Item_Name+ "loaded with image" + Image_Directory);
         Node child = GetChild(0);
         
@@ -40,6 +43,14 @@ public class Item : Node2D
         files.Close();
     }
 
+    public int getUsage()
+    {
+        return usage;
+    }
+    public int getDamage()
+    {
+        return damage;
+    }
     public String getID()
     {
         return ID;
