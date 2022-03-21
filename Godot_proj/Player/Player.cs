@@ -15,6 +15,8 @@ public class Player : KinematicBody2D
     private int sprintBonus;
     [Export] public int speed;
     [Export] public float interact_waittime = 1;
+    private Timer Attaack_CountDown = new Timer();
+    private double Attack_Interval;
 
     public Array expandable_Items = new Array();
     public List<int>  expandable_Items_quantity= new List<int>();
@@ -166,6 +168,11 @@ public class Player : KinematicBody2D
         {
             Health = 0;
             GD.Print("Player Health is 0");
+        }
+        else if (Health - damage > 100)
+        {
+            Health = 100;
+            GD.Print("Player full health");
         }
         GD.Print(Health.ToString());
     }

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="48bb29cf-eb35-45e8-8fc5-5ca3d26b5347" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mono/metadata/ide_messaging_meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/metadata/ide_messaging_meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Item_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Item_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Interactive_Entity/Items/Simple_Pickable_Item/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/Holding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Holding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/metadata/ide_messaging_meta.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
