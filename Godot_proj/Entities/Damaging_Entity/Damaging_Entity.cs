@@ -9,7 +9,7 @@ public class Damaging_Entity : Area2D
     // private string b = "text";\
     private Node Origin;
     private float velocity = 0;
-    [Export]public int damage = 10;
+    [Export]public int damage = 100;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -41,8 +41,14 @@ public class Damaging_Entity : Area2D
         {
             (body as Player).receive_Damage(damage);
             GD.Print("receive damage");
-            this.QueueFree();
         }
+        else if(body is Mob_type_1)
+        {
+            (body as Mob_type_1).receive_damage(damage);
+            GD.Print("damage given to mob "+ body.ToString());
+            
+        }
+        this.QueueFree();
     }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)

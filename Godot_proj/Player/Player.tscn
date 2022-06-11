@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.cs" type="Script" id=1]
 [ext_resource path="res://Player/PlayerBodySprite/front_facing/left_aim/PlayerFrame_idle_1/Charactor_imageFrontL.PNG" type="Texture" id=2]
@@ -12,6 +12,9 @@ height = 10.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 108.341
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 525.381
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
@@ -56,3 +59,8 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="Holding/AimSight"]
 visible = false
 texture = ExtResource( 3 )
+
+[node name="AttactTargetAquirement" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttactTargetAquirement"]
+shape = SubResource( 3 )
