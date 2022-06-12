@@ -67,3 +67,6 @@ position = Vector2( -166, 309 )
 
 [node name="Mob_type_1" parent="." instance=ExtResource( 10 )]
 position = Vector2( -495, 321 )
+
+[node name="Mob_type_2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -88, -336 )
