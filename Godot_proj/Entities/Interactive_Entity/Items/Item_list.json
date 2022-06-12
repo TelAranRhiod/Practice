@@ -10,7 +10,8 @@
         "Item_debuff":null,
         "Item_worth" :0,
         "Item_cost":0,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
 
     },
     "2":
@@ -24,7 +25,8 @@
         "Item_debuff": null,
         "Item_worth" :0 ,
         "Item_cost":0,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
 
     },
     "3":
@@ -38,7 +40,8 @@
         "Item_debuff": null,
         "Item_worth" : 50,
         "Item_cost":70,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
 
     },
     "4":
@@ -52,7 +55,8 @@
         "Item_debuff": null,
         "Item_worth" : 20,
         "Item_cost":40,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
     },
     "100":
     {
@@ -65,7 +69,8 @@
         "Item_debuff": null,
         "Item_worth" : 0,
         "Item_cost":0,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
     },
     "101":
     {
@@ -78,7 +83,22 @@
         "Item_debuff": null,
         "Item_worth" : 20,
         "Item_cost": 50,
-        "Item_usage": "1"
+        "Item_usage": "1",
+        "hitscan": "0"
+    },
+    "102":
+    {
+        "Item_Name":"stuff",
+        "Item_Heal":25,
+        "Item_Capacity": 10,
+        "Item_Damage":"50",
+        "Item_Holster":true,
+        "Item_Directory":"res://Entities/Interactive_Entity/Items/Item_Pics/Item_Thumbnail/Health_Kit.png",
+        "Item_debuff": null,
+        "Item_worth" : 20,
+        "Item_cost": 50,
+        "Item_usage": "30",
+        "hitscan": "1"
     }
 
 }

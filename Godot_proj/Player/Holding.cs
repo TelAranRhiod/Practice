@@ -82,16 +82,36 @@ public class Holding : Node2D
     private void use_item()
     {
         if (hold == null) {return; }
+
+        if (hold.hitscan)
+        {
+            if(hold.usage >0){
+                if (IsInstanceValid(target))
+                {
+                    target.receive_damage(hold.getDamage());
+                    hold.usage--;
+                }
+                else
+                {
+                    hold.usage--;
+                }
+            }
+            else
+            {
+                GD.Print("Need Reloads");
+            }
+            return;
+        }
         var b =(PackedScene) ResourceLoader.Load(
             "res://Entities/Damaging_Entity/Damaging_Particle.tscn") ;
         Damaging_Entity bullet = b.Instance() as Damaging_Entity;
         bullet.damage = hold.getDamage();
         if (bullet.damage > 0)
         {
-            bullet.SetOrigin(GetParent());
+            bullet.setNotEffectToPlayer();
         }
-        bullet.setVelocity(100.0f);
         
+        bullet.setVelocity(100.0f);
         bullet.Transform = (GetNode("aim_region") as Area2D).GlobalTransform;
         GetTree().CurrentScene.AddChild(bullet);
         bullet.Position = new Vector2(bullet.Position.x - 25, bullet.Position.y - 15);

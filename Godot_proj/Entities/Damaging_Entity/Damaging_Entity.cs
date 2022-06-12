@@ -7,7 +7,7 @@ public class Damaging_Entity : Area2D
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";\
-    private Node Origin;
+    private Boolean effectToPlayer = true;
     private float velocity = 0;
     [Export]public int damage = 100;
     // Called when the node enters the scene tree for the first time.
@@ -16,28 +16,28 @@ public class Damaging_Entity : Area2D
         Connect("body_entered", this, nameof(on_body_entered));
     }
 
-    public void SetOrigin(Node node)
-    {
-        Origin = node;
-    }
     
     public override void _PhysicsProcess(float delta)
     {
         Position += velocity * Transform.x * delta;
     }
 
-    
+    public void setNotEffectToPlayer()
+    {
+        effectToPlayer = false;
+    }
+    public void setEffectToPlayer()
+    {
+        effectToPlayer = true;
+    }
     public void setVelocity(float vel)
     {
         this.velocity = vel;
     }
     public void on_body_entered(Node body)
     {
-        if (body == Origin)
-        {
-            return;
-        }
-        if (body is Player)
+        
+        if (body is Player && effectToPlayer)
         {
             (body as Player).receive_Damage(damage);
             GD.Print("receive damage");

@@ -11,8 +11,11 @@ public class Item : Node2D
     public string ID = "1";
     private String Item_Name;
     private String Image_Directory ;
+    private int Cost = 0;
+    private int Worth = 0;
     private int damage = 0;
-    private int usage = 0;
+    public int usage = 0;
+    public Boolean hitscan = false;
     public override void _Ready()
     {
         File files = new File();
@@ -28,7 +31,10 @@ public class Item : Node2D
         Image_Directory = (String) ItemInfo["Item_Directory"];
         damage = ((String) ItemInfo["Item_Damage"]).ToInt();
         usage = ((String) ItemInfo["Item_usage"]).ToInt();
-        
+        if (((String) ItemInfo["hitscan"]).ToInt() == 1)
+        {
+            hitscan = true;
+        }
         GD.Print(Item_Name+ "loaded with image" + Image_Directory);
         Node child = GetChild(0);
         

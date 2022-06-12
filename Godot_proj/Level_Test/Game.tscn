@@ -52,7 +52,7 @@ position = Vector2( 1, 0 )
 ID = "101"
 
 [node name="ManualPickup3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 562, 483 )
+position = Vector2( 54, 443 )
 
 [node name="Item" parent="ManualPickup3" instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
@@ -70,3 +70,10 @@ position = Vector2( -495, 321 )
 
 [node name="Mob_type_2" parent="." instance=ExtResource( 10 )]
 position = Vector2( -88, -336 )
+
+[node name="ManualPickup4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 67, 60 )
+
+[node name="Item" parent="ManualPickup4" instance=ExtResource( 3 )]
+position = Vector2( 1, 0 )
+ID = "102"

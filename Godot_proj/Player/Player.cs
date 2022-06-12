@@ -162,7 +162,7 @@ public class Player : KinematicBody2D
             Health = Health - damage;
             GD.Print("Taken Damage" + Health.ToString());
         }
-        else if(Health - damage < 0)
+        else if(Health - damage <= 0)
         {
             Health = 0;
             GD.Print("Player Health is 0");
